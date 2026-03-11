@@ -35,5 +35,14 @@ public class LoginPage {
 		ElementActionUtils.getInstance().performAction("click",loginBtn,null);
 		ElementActionUtils.getInstance().performAction("wait",null,"5");
 	}
+	
+	public void invlaidlogin() {
+		ElementActionUtils.getInstance().performAction("input",username, "Ayn");
+		ElementActionUtils.getInstance().performAction("wait",null,"3");
+		ElementActionUtils.getInstance().performAction("input",password, "123");
+		ElementActionUtils.getInstance().performAction("wait",null,"3");
+		ElementActionUtils.getInstance().performAction("click",loginBtn,null);
+		ElementActionUtils.getInstance().performAction("wait",null,"5");
+	}
 
 }

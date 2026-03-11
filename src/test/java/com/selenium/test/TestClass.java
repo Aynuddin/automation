@@ -31,11 +31,12 @@ public class TestClass extends BaseClass {
 		logpage.login();
 		assert ConfigManager.getPropertyValue("username").equals("Ayn.uddin@yethi.co.in") : "Test Filed";
 	}
-//	@Test(priority = 2)
-//	public void fillPassword() throws Exception {
-//		LogoutPage logout = new LogoutPage();
-//		logout.logout();
-//		assert ConfigManager.getPropertyValue("password").equals("Welcome@2020") : "Test Filed";
-//	}
+	@Test(priority = 2)
+	public void fillPassword() throws Exception {
+		
+		logpage.invlaidlogin();
+		
+		assert ConfigManager.getPropertyValue("password").equals("Welcome@2020") : "Test Filed";
+	}
 
 }
