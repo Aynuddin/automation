@@ -40,6 +40,7 @@ public class TestClass extends BaseClass {
 	
 	@Test(testName = "LogInvalid Test",priority = 2)
 	public void invalidLogin() throws Exception {
+		// check invalid login
 		logpage.invalidlogin();
 		//logpage.logout();
 		
