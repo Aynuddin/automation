@@ -17,7 +17,7 @@ public class BaseClass {
 	@BeforeSuite
 	//@Parameters("browser")
 	// initalize the browser
-	public void setUp() {
+	public synchronized void setUp() {
 		String browserName = ConfigManager.getPropertyValue("browser");
 		System.out.println("Browser name :"+browserName);
 		DriverFactory.initDriver(browserName);
@@ -27,7 +27,7 @@ public class BaseClass {
 	
 	@AfterSuite
 	public void destoryApplication() {
-		//ExtentManager.endTest();
+		ExtentManager.endTest();
 		if(DriverFactory.getDriver() != null) {
 			DriverFactory.quitDriver();
 		}

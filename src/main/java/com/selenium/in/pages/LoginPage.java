@@ -17,6 +17,8 @@ public class LoginPage {
 	private By username = By.xpath("//input[@name='username']");
 	private By password = By.xpath("//input[@name='password']");
 	private By loginBtn = By.xpath("//button[@type='submit']");
+	private By logntfobtn = By.xpath("/html/body/div[1]/div[1]/div/header/div/div[3]/div[3]");
+	private By logoutbtn = By.xpath("/html/body/div[3]/div[3]/ul/li[2]");
 //	public LoginPage() {
 //		PageFactory.initElements(DriverFactory.getDriver(), this);
 //	}
@@ -36,13 +38,22 @@ public class LoginPage {
 		ElementActionUtils.getInstance().performAction("wait",null,"5");
 	}
 	
-	public void invlaidlogin() {
+	public void invalidlogin() {
 		ElementActionUtils.getInstance().performAction("input",username, "Ayn");
 		ElementActionUtils.getInstance().performAction("wait",null,"3");
-		ElementActionUtils.getInstance().performAction("input",password, "123");
+		ElementActionUtils.getInstance().performAction("input",password, "ayn123");
 		ElementActionUtils.getInstance().performAction("wait",null,"3");
 		ElementActionUtils.getInstance().performAction("click",loginBtn,null);
 		ElementActionUtils.getInstance().performAction("wait",null,"5");
+	}
+	
+	public void logout() {
+		
+		ElementActionUtils.getInstance().performAction("wait",null,"5");
+		ElementActionUtils.getInstance().performAction("click", logntfobtn, null);
+		ElementActionUtils.getInstance().performAction("wait", null, "3");
+		ElementActionUtils.getInstance().performAction("click", logoutbtn, null);
+		ElementActionUtils.getInstance().performAction("wait", null, "5");
 	}
 
 }

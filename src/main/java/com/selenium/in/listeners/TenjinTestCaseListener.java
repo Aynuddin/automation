@@ -13,7 +13,7 @@ public class TenjinTestCaseListener implements ITestListener {
 	@Override
 	public void onTestStart(ITestResult result) {
 		
-		ExtentManager.logStep("Start execution_"+result.getTestName());
+		ExtentManager.logStep("Start execution_"+result.getName());
 		
 	}
 	
@@ -24,12 +24,12 @@ public class TenjinTestCaseListener implements ITestListener {
 	
 	@Override
 	public void onTestFailure(ITestResult result) {
-		ExtentManager.logStepFailure("Failed to ExecuteTest", result.getTestName());
+		ExtentManager.logStepFailure("Failed to ExecuteTest", result.getName());
 	}
 	
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		ExtentManager.logStepSucess("Successfully executed test case "+result.getTestName());
+		ExtentManager.logStepSucess("Successfully executed test case "+result.getName());
 	}
 	
 	@Override

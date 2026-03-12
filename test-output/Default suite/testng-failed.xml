@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="destoryApplication"/>
-          <include name="loginFunctionality"/>
+          <include name="invalidLogin"/>
         </methods>
       </class> <!-- com.selenium.test.TestClass -->
     </classes>

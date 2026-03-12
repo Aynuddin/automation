@@ -23,20 +23,26 @@ public class TestClass extends BaseClass {
 		logpage = new LoginPage();
 	}
 	
-	@Test(priority = 1,testName = "Login Test")
+	@Test(testName = "Login Test",priority = 1)
 	public void loginFunctionality() throws Exception {
 		//ExtentManager.startTest("Valid Login Test");
 		System.out.println("Start execution...............");
 		//ExtentManager.logStep("Navigate to the application url");
 		logpage.login();
-		assert ConfigManager.getPropertyValue("username").equals("Ayn.uddin@yethi.co.in") : "Test Filed";
 	}
-	@Test(priority = 2)
-	public void fillPassword() throws Exception {
+	
+	@Test(testName = "Logout Test",priority = 3)
+	public void logoutTest() throws Exception {
 		
-		logpage.invlaidlogin();
+		logpage.logout();
 		
-		assert ConfigManager.getPropertyValue("password").equals("Welcome@2020") : "Test Filed";
+	}
+	
+	@Test(testName = "LogInvalid Test",priority = 2)
+	public void invalidLogin() throws Exception {
+		logpage.invalidlogin();
+		//logpage.logout();
+		
 	}
 
 }

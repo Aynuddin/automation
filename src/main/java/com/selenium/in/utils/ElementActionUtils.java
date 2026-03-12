@@ -28,13 +28,13 @@ public class ElementActionUtils {
 				ele = LocateElementUtils.getInstance().findElement(locator);
 				ExtentManager.logStepSucess("Successfully locate the element");
 			} catch (Exception e) {
-				ExtentManager.logStepFailure("Unable to locate the element on this locator", "Failed locate element");
+				ExtentManager.logStep("Unable to locate element");
+				//ExtentManager.logStepFailure("Unable to locate the element on this locator", "Failed locate element");
+				throw new RuntimeException("Unable to locate element", e);
 			}
 		}
 		
-		if(ele != null) {
-			
-			try {
+	    	try {
 				switch (action) {
 				case "input":
 					ActionDriver.getInstance().enterValue(ele, data);
@@ -56,10 +56,8 @@ public class ElementActionUtils {
 				}
 			} catch (Exception e) {
 				//ExtentManager.logStepFailure("Action failed to perform :"+locator, "PageEleScreenshot "+action);
+				throw new RuntimeException("Unable to click element", e);
 			}
-		}else {
-			System.out.println("Element not found");
-		}
 		
 	}
 
